@@ -2,7 +2,7 @@
 
 * This app is to demonstrate the ability to use a js framework knockout.js & Google Maps API.
 
-# Built With
+## Built With
 
 * JavaScript
 * HTML
@@ -12,7 +12,7 @@
 * Google Maps API
 * Foursquare API
 
-# Download
+## Download
 
 * Download the project or clone the repository
 * Open index.html
