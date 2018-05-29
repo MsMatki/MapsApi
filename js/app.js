@@ -1,8 +1,8 @@
 // Global Variables
-var map, clientID, clientSecret;
+let map, clientID, clientSecret;
 
 function AppViewModel() {
-    var self = this;
+    let self = this;
 
     this.searchOption = ko.observable("");
     this.markers = [];
@@ -19,13 +19,13 @@ function AppViewModel() {
             clientSecret =
                 "3UZMRJ1XEB1WDHZROFUCCIGDJCFMWPVRG5J4FFDWVDNHEV4K";
             // URL for Foursquare API
-            var apiUrl = 'https://api.foursquare.com/v2/venues/search?ll=' +
+            let apiUrl = 'https://api.foursquare.com/v2/venues/search?ll=' +
                 marker.lat + ',' + marker.lng + '&client_id=' + clientID +
                 '&client_secret=' + clientSecret + '&query=' + marker.title +
                 '&v=20170708' + '&m=foursquare';
             // Foursquare API
             $.getJSON(apiUrl).done(function(marker) {
-                var response = marker.response.venues[0];
+                let response = marker.response.venues[0];
                 self.street = response.location.formattedAddress[0];
                 self.city = response.location.formattedAddress[1];
 
@@ -63,8 +63,8 @@ function AppViewModel() {
     };
 
     this.initMap = function() {
-        var mapCanvas = document.getElementById('map');
-        var mapOptions = {
+        let mapCanvas = document.getElementById('map');
+        let mapOptions = {
             center: new google.maps.LatLng(43.4643,-80.5204),
             zoom: 13,
             styles: styles
@@ -74,7 +74,7 @@ function AppViewModel() {
 
         // Set InfoWindow
         this.largeInfoWindow = new google.maps.InfoWindow();
-        for (var i = 0; i < myLocations.length; i++) {
+        for (let i = 0; i < myLocations.length; i++) {
             this.markerTitle = myLocations[i].title;
             this.markerLat = myLocations[i].lat;
             this.markerLng = myLocations[i].lng;
@@ -102,9 +102,9 @@ function AppViewModel() {
     // This block appends our locations to a list using data-bind
     // It also serves to make the filter work
     this.myLocationsFilter = ko.computed(function() {
-        var result = [];
-        for (var i = 0; i < this.markers.length; i++) {
-            var markerLocation = this.markers[i];
+        let result = [];
+        for (let i = 0; i < this.markers.length; i++) {
+            let markerLocation = this.markers[i];
             if (markerLocation.title.toLowerCase().includes(this.searchOption()
                     .toLowerCase())) {
                 result.push(markerLocation);
