@@ -23,12 +23,12 @@ function AppViewModel() {
                 marker.lat + ',' + marker.lng + '&client_id=' + clientID +
                 '&client_secret=' + clientSecret + '&query=' + marker.title +
                 '&v=20170708' + '&m=foursquare';
+                
             // Foursquare API
             $.getJSON(apiUrl).done(function(marker) {
                 let response = marker.response.venues[0];
                 self.street = response.location.formattedAddress[0];
                 self.city = response.location.formattedAddress[1];
-
                 self.htmlContentFoursquare =
                     '<div>' +
                     '<h6 class="iw_address_title"> Address: </h6>' +

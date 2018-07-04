@@ -1,27 +1,30 @@
+body{
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .app_title {
     padding: 15px 5px 10px 5px;
+    color:rgba(180,180,180,1);
 }
 
 .sidebar_width {
     min-width: 300px;
 }
 
-.sidebar_hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid rgba(255,255,255,1);
+.location_list {
+    padding: 1em 0 1em 0.6em;
+    font-size:0.8em;
+    color:rgba(180,180,180,1) !important;
 }
 
-.location_list {
-    padding: 3px 5px 5px 5px;
-}
 a:hover{
     text-decoration:none;
 }
 .location_list:hover{
-    color:#FFA500 !important; 
-    transition:0.2s;
+    color:white !important; 
+    transition:0.3s;
+    background-color:grey;
 
 }
 .iw_title {
@@ -52,7 +55,9 @@ a:hover{
 
 .search {
     width: 100%;
-    font-size: .9em;
+    font-size: 0.8em;
+    height:2.5em;
+    margin-bottom:1em;
 }
 
 @media (max-width: 768px) {
@@ -68,4 +73,10 @@ a:hover{
     top: 50%;
     width: 100%;
     text-align: center;
+}
+.bg-dark{
+    background-color:black !important;
+}
+.navbar-toggler-icon{
+    color:white;
 }
